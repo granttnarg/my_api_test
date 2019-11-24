@@ -5,25 +5,31 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first
+puts "deleting db ..."
+
 Comment.destroy_all
 Restaurant.destroy_all
 User.destroy_all
 
 
+puts "....."
 user = User.create(email:"test@testing.com", password: "testtest")
-puts "user created"
+puts "1 user created!"
 
+puts "....."
 otto = Restaurant.create(user: user, name: "Ottolenghi", address: "287 Upper Street, London")
 rovi = Restaurant.create(user: user, name: "Rovi", address: "59 Wells st, London")
 ducksoup = Restaurant.create(user: user, name: "Duck Soup", address: "41 Dean st, London")
 
 puts "3 London Restaurants created"
 
+puts "....."
 gazzo = Restaurant.create(user: user, name: "Gazzo", address: "Hobrechtstraße 57, Berlin")
 time_raue = Restaurant.create(user: user, name: "Time Raue", address: "Rudi-Dutschke-Straße 26, Berlin")
 
 puts "3 London Restaurants created"
 
+puts "....."
 Comment.create(user: user, restaurant: otto, content: "Top knotch")
 Comment.create(user: user, restaurant: gazzo, content: "Pizza Heaven")
 
